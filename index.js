@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 const morgan = require("morgan");
-dotenv.config();
+// dotenv.config();
 require( './config/server');
 
 const port = process.env.PORT;
