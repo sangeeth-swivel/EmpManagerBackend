@@ -20,9 +20,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // Require employees routes
-require('./routes/employee.routes')(app);
+const empRouter = require('./routes/employee.routes');
+app.use("/employee", empRouter);
 
-app.get('/employee/list', () => {
+app.get('/', (req, res) => {
+        res.status(200).json("home page")
 });
 
 // listen for requests
