@@ -1,23 +1,28 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const url = "mongodb://localhost/employeeManager";
+const express = require('express');
+const bodyParser = require('body-parser');
+const dotenv = require("dotenv");
+const morgan = require("morgan");
+dotenv.config();
+require( './config/server');
 
+const port = process.env.PORT;
+
+// create express app
 const app = express();
 
-mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
-
-const con = mongoose.connection;
-
-con.on("open", () => {
-  console.log("connected..");
-});
-
+app.use(morgan("dev"));
 app.use(express.json());
 
-const empRouter = require("./routes/employeeRoutes");
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use("/employee", empRouter);
+// parse requests of content-type - application/json
+app.use(bodyParser.json())
 
-app.listen(4000, () => {
-  console.log("Server Started port 4000");
+// Require employees routes
+require('./routes/employee.routes')(app);
+
+// listen for requests
+app.listen(port, () => {
+    console.log("server running port is:" + port);    
 });
