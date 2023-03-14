@@ -1,11 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const dotenv = require("dotenv");
 const morgan = require("morgan");
-// dotenv.config();
 require( './config/server');
-
-const port = process.env.PORT;
 
 // create express app
 const app = express();
@@ -28,6 +24,6 @@ app.get('/', (req, res) => {
 });
 
 // listen for requests
-app.listen(port, () => {
-    console.log("server running port is " + port);    
+app.listen(3080, () => {
+    console.log("server running port is 3080");    
 });
