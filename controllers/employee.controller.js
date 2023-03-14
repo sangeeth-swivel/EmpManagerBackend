@@ -17,10 +17,8 @@ exports.addEmployee = async (req, res) => {
     photo: req.body.photo,
   });
 
-  const validatedEmployee = await createEmployeeSchema.validateAsync(employee);
-
   // Save Employee in the database
-  validatedEmployee
+  employee
     .save()
     .then((data) => {
       res.send(data);
