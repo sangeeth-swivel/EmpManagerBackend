@@ -22,6 +22,9 @@ app.use(bodyParser.json())
 // Require employees routes
 require('./routes/employee.routes')(app);
 
+app.get('/employee/list', (req, res) => {
+});
+
 // listen for requests
 app.listen(port, () => {
     console.log("server running port is:" + port);    
