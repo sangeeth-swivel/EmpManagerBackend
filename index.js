@@ -22,10 +22,10 @@ app.use(bodyParser.json())
 // Require employees routes
 require('./routes/employee.routes')(app);
 
-app.get('/employee/list', (req, res) => {
+app.get('/employee/list', () => {
 });
 
 // listen for requests
 app.listen(port, () => {
-    console.log("server running port is:" + port);    
+    console.log("server running port is " + port);    
 });
