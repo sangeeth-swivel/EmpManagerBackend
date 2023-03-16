@@ -13,7 +13,6 @@ exports.addEmployee = async (req, res) => {
     email: req.body.email,
     phone: req.body.phone,
     gender: req.body.gender,
-    empId: req.body.empId,
     photo: req.body.photo,
   });
 
@@ -47,8 +46,8 @@ exports.findAllEmployee = (req, res) => {
 
 // Find a single Employee with a EmployeeId
 exports.findOneEmployee = (req, res) => {
-  const empId = req.params.empId;
-  Employee.findById(req.params.empId)
+  const empId = req.params.id;
+  Employee.findById(req.params.id)
     .then((employee) => {
       if (!employee) {
         return res.status(404).send({
@@ -71,7 +70,7 @@ exports.findOneEmployee = (req, res) => {
 
 // Update a Employee identified by the EmployeeId in the request
 exports.updateEmployee = (req, res) => {
-  const empId = req.params.empId;
+  const empId = req.params.id;
 
   // Find employee and update it with the request body
   Employee.findByIdAndUpdate(
@@ -108,9 +107,9 @@ exports.updateEmployee = (req, res) => {
 
 // Delete a Employee with the specified EmployeeId in the request
 exports.deleteEmployee = (req, res) => {
-  const empId = req.params.empId;
+  const empId = req.params.id;
 
-  Employee.findByIdAndRemove(req.params.empId)
+  Employee.findByIdAndRemove(req.params.id)
     .then((employee) => {
       if (!employee) {
         return res.status(404).send({
