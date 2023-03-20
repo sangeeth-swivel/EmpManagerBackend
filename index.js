@@ -2,9 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require("morgan");
 require( './config/server');
+const cors = require('cors')
 
 // create express app
 const app = express();
+
+app.use(cors());
 
 app.use(morgan("dev"));
 app.use(express.json());
