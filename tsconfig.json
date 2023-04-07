@@ -4,17 +4,17 @@
       "module": "commonjs",
       "sourceMap": true,
       // "outDir": "dist",
-      "rootDir": "src",
+      // "rootDir": "src",
       "strict": true,
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true,
       "jsx": "react"
     },
-    "include": [
-      "src/**/*"
-, "config"    ],
-    "exclude": [
-      "node_modules"
-    ]
+//     "include": [
+//       "src/**/*"
+// , "config"    ],
+//     "exclude": [
+//       "node_modules"
+//     ]
   }
   
