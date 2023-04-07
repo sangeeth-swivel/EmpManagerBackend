@@ -13,8 +13,8 @@ import validateUpdateEmployeeMiddleware from "./middleware/validateUpdate.middle
 
 const router = express.Router();
 
-router.get("/", getAllEmployeesHandler);
-router.post("/create", createEmployeeHandler);
+router.get("/list", getAllEmployeesHandler);
+router.post("/add", createEmployeeHandler);
 
 router.get(
   "/getEmployee/:id",
