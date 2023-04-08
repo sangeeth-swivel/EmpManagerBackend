@@ -1,12 +1,14 @@
 {
     "compilerOptions": {
       "target": "es6",
+      "outDir": "build",
       "module": "commonjs",
-      "sourceMap": true,
+      // "sourceMap": true,
       "strict": true,
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true,
-      "jsx": "react"
+      "jsx": "react",
+      "skipLibCheck": true /* Skip type checking all .d.ts files. */
     },
   }
   
