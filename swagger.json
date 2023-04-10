@@ -1,0 +1,146 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Employee Management Backend API",
+    "version": "1.0.0",
+    "description": "An API for retrieving information about a simple CRUD-based application to manage employees."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3080",
+      "description": "Dev server"
+    },
+    {
+      "url": "https://emp-manager-backend.herokuapp.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/employee/getEmployee/{id}": {
+      "get": {
+        "summary": "Get employee by ID",
+        "description": "Retrieves information about a employee based on their ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "/employee/getEmployee/${id}",
+            "description": "ID of the employee to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "ID of the employee"
+                    },
+                    "firstname": {
+                      "type": "string",
+                      "description": "First name of the employee"
+                    },
+                    "lastname": {
+                      "type": "string",
+                      "description": "Last name of the employee"
+                    },
+                    "email": {
+                      "type": "string",
+                      "description": "Email address of the employee"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "description": "Phone number of the employee"
+                    },
+                    "gender": {
+                      "type": "string",
+                      "description": "Gender of the employee"
+                    },
+                    "photo": {
+                      "type": "string",
+                      "description": "Gender of the employee"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/employee/list": {
+      "get": {
+        "summary": "Returns a list of employees",
+        "description": "Retrieves list of employees",
+        "responses": {
+          "200": {
+            "description": "A json array of users"
+          }
+        }
+      }
+    },
+    "employee/add": {
+      "post": {
+        "summary": "Add a new emplo",
+        "description": "Add new employee",
+        "requestBody": {
+          "description": "Adding a new employee",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/employee"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "created"
+          }
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+      "employee": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "photo": {
+            "type": "string"
+          }
+        },
+        "required": ["firstName", "lastName", "email", "phone", "gender"]
+      }
+    }
+  }
+}
