@@ -23,7 +23,7 @@
         "parameters": [
           {
             "name": "id",
-            "in": "/employee/getEmployee/${id}",
+            "in": "path",
             "description": "ID of the employee to retrieve",
             "required": true,
             "schema": {
@@ -73,7 +73,7 @@
             }
           },
           "404": {
-            "description": "User not found"
+            "description": "Employee not found"
           }
         }
       }
@@ -84,14 +84,14 @@
         "description": "Retrieves list of employees",
         "responses": {
           "200": {
-            "description": "A json array of users"
+            "description": "A json array of employees"
           }
         }
       }
     },
     "employee/add": {
       "post": {
-        "summary": "Add a new emplo",
+        "summary": "Add a new employee",
         "description": "Add new employee",
         "requestBody": {
           "description": "Adding a new employee",
@@ -107,6 +107,27 @@
         "responses": {
           "201": {
             "description": "created"
+          }
+        }
+      }
+    },
+    "/employee/deleteEmployee/{id}": {
+      "delete": {
+        "summary": "Remove an employee",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "employee id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
