@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
-import config from "config";
+const config = require("config");
 import logger from "./logger";
 
 async function connect() {
   mongoose.set("strictQuery", true);
-  const dbUri = process.env.dbURI || config.get<string>("dbUri");
+  const dbUri = process.env.PORT || config.get("EmployeeDb.dbConfig.dbUri");
+
   try {
     await mongoose.connect(dbUri);
     logger.info("Connected to DB");
