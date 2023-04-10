@@ -7,7 +7,7 @@ import swaggerUi from "swagger-ui-express";
 const swaggerDocs = require("../swagger.json");
 
 const app = createServer();
-const port = process.env.PORT || config.get("port")
+const port = process.env.PORT || config.get('EmployeeDb.dbConfig.port')
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.get("/", (req, res) => {
