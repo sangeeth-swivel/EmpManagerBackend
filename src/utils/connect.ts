@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-const config = require("config");
 import logger from "./logger";
+const config = require("config");
 
 async function connect() {
   mongoose.set("strictQuery", true);
