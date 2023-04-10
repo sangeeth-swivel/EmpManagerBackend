@@ -2,7 +2,7 @@
   "name": "assignment",
   "version": "1.0.0",
   "description": "",
-  "main": "build/src/app.js",
+  "main": "build/src/app.ts",
   "dependencies": {
     "config": "^3.3.9",
     "cors": "^2.8.5",
