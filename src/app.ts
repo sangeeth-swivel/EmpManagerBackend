@@ -1,10 +1,11 @@
-import config from "config";
+// import config from "config";
 import connect from "./utils/connect";
 import log from "./utils/logger";
 import createServer from "./utils/server";
 
 const app = createServer();
-const port = process.env.PORT || config.get<number>("port");
+// const port = process.env.PORT || config.get<number>("port");
+const port = process.env.PORT;
 
 app.get("/", (req, res) => {
   res.send("home page");
