@@ -4,8 +4,6 @@
   "description": "",
   "main": "build/app.js",
   "dependencies": {
-    "@types/body-parser": "^1.19.2",
-    "body-parser": "^1.20.2",
     "config": "^3.3.9",
     "cors": "^2.8.5",
     "dayjs": "^1.11.7",
@@ -22,7 +20,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
-    "build": "tsc && cp swagger.json build",
+    "build": "tsc && copy swagger.json build",
     "test": "jest",
     "start": "node build/app.js"
   },
