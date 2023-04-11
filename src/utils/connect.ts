@@ -4,7 +4,7 @@ const config = require("config");
 
 async function connect() {
   mongoose.set("strictQuery", true);
-  const dbUri = process.env.PORT || config.get("EmployeeDb.dbConfig.dbUri");
+  const dbUri = process.env.DB_URL || config.get("EmployeeDb.dbConfig.dbUri");
 
   try {
     await mongoose.connect(dbUri);
