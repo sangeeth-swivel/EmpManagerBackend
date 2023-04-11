@@ -2,7 +2,7 @@
   "name": "assignment",
   "version": "1.0.0",
   "description": "",
-  "main": "build/src/app.ts",
+  "main": "build/app.js",
   "dependencies": {
     "@types/body-parser": "^1.19.2",
     "body-parser": "^1.20.2",
@@ -24,7 +24,7 @@
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc && cp swagger.json build",
     "test": "jest",
-    "start": "node build/src/app.ts"
+    "start": "node build/app.js"
   },
   "keywords": [],
   "author": "",
