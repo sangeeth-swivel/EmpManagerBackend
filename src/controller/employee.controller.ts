@@ -4,7 +4,6 @@ import {
   getAllEmployeesService,
   getEmployeeByIdService,
   createEmployeeService,
-  updateEmployeeService,
   removeEmployeeService,
 } from "../service/employee.service";
 
@@ -42,9 +41,8 @@ const createEmployeeHandler = async (req: Request, res: Response) => {
   }
 };
 
-const updateEmployeeHandler = async (req: Request, res: Response) => {
+const updateEmployeeHandler = async (res: Response) => {
   try {
-    const result = await updateEmployeeService(req.body);
     return res.status(200).json({ message: "success" });
   } catch (err) {
     return res.status(400).json({ status: "error", message: err });

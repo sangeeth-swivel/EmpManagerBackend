@@ -6,7 +6,7 @@ const validateUpdateEmployeeMiddleware = (
   res: Response,
   next: NextFunction
 ) => {
-  const { error, value } = updateEmployeeSchema.validate(req.body);
+  const { error } = updateEmployeeSchema.validate(req.body);
   console.log(req.body);
   if (error) {
     return res
@@ -15,7 +15,6 @@ const validateUpdateEmployeeMiddleware = (
   }
 
   next();
-  return;
 };
 
 export default validateUpdateEmployeeMiddleware;

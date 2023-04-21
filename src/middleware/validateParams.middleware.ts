@@ -6,7 +6,7 @@ const validateParamsMiddleware = (
   res: Response,
   next: NextFunction
 ) => {
-  const { error, value } = reqParamasSchemaId.validate(req.params.id);
+  const { error } = reqParamasSchemaId.validate(req.params.id);
 
   if (error) {
     return res
@@ -15,7 +15,6 @@ const validateParamsMiddleware = (
   }
 
   next();
-  return;
 };
 
 export default validateParamsMiddleware;

@@ -6,7 +6,10 @@ const createServer = () => {
   const app = express();
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  app.use(cors());
+  let corsOptions = {
+    origin: 'https://emp-manager-frontend-9qte3gt4d-sangeeth-swivel.vercel.app'
+  }
+  app.use(cors(corsOptions));
   app.use("/employee", router);
 
   return app;
